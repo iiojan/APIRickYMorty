@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Diagnostico APIs</title>
+</head>
+<body>
+    <h1>Consumo de Rick y Morty API</h1>
+    <div class="container">
+        {% for v in personajes %}
+        <div class="card">
+          <img src={{v.image}} alt="" id={{v.id}}>
+          <div class="card-content">
+            <h3 class="card-title">{{v.name}}</h3>
+            <p class="card-description"><strong>Estatus:</strong> {{v.status}} <br><strong>Localización:</strong> {{v.location.name}} </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>    
+</body>
+</html>
